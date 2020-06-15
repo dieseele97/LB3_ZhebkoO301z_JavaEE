@@ -1,1 +1,1 @@
-# LB3_ZhebkoO301z_JavaEE
+# Laboratory work 3.Java EE Zhebko O. 301z

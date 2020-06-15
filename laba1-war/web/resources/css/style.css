@@ -1,0 +1,26 @@
+.body1{
+background-image:url('https://avatars.mds.yandex.net/get-pdb/2391763/dbda4af8-6543-40da-a412-50602a6fe873/s1200?webp=false');
+background-size: 100%;
+}
+.div1{
+position: absolute;
+text-align: center;
+top: 40%;
+left: 50%;
+margin-right: -50%;
+transform: translate(-50%, -50%);   
+background: rgba(255,245,215,0.8);
+width: 50%;
+height: 30%;
+}
+.div2{
+position: absolute;
+text-align: center;
+top: 40%;
+left: 50%;
+margin-right: -50%;
+transform: translate(-50%, -50%);   
+background: rgba(255,245,215,0.8);
+width: 50%;
+height: 40%;
+}
