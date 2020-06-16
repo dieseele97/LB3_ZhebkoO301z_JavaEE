@@ -17,6 +17,8 @@ public class LogonBean {
     private String password_admin = "123";
     private String login_lector = "lector";
     private String password_lector = "123";  
+    private String su_admin = "suadmin";
+    private String password_su = "123";
     public LogonBean() {
        
     }
@@ -35,8 +37,7 @@ public class LogonBean {
 
     public void setPass(String pass) {
         this.pass = pass.trim();
-    }  
-    
+    }      
 
     public String logon() {
        FacesContext ctx = FacesContext.getCurrentInstance();
@@ -50,12 +51,15 @@ public class LogonBean {
         if (ctx.getMessageList().size() != 0)
          return null;
       if (this.login_admin.equals(login) && this.password_admin.equals(pass)) {          
-              return "menupage.jsp";           
+              return "menupage.jsp?faces-redirect=true";           
         } else if (this.login_lector.equals(login) && this.password_lector.equals(pass)) {   
-            return "menupage.jsp";   
+            return "menupage.jsp?faces-redirect=true";   
+        }
+         else if (this.su_admin.equals(login) && this.password_su.equals(pass)) {   
+            return "composite.xhtml?faces-redirect=true";   
         }
         else {
-            return "error.xhtml";
+            return "error.xhtml?faces-redirect=true";
         } 
 
     }

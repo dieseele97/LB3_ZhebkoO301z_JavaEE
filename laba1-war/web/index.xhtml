@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">   
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+      
 
     <h:head>
       <title>Прототип системи дистанційного навчання</title>
@@ -12,15 +14,17 @@
           <h:panelGroup styleClass="div1">
             <h:outputLabel><h1>Прототип системи дистанційного навчання</h1></h:outputLabel>
         <h:form id="Form">           
-            <h:outputLabel>Введіть логін: </h:outputLabel>
-            <h:inputText id="login" maxlength="20"  value="#{logonBean.login}"/>
+            <h:outputLabel><h3>Введіть логін:</h3></h:outputLabel>
+            <p:inputText value="#{logonBean.login}"></p:inputText>
           <h:message for="login" errorClass="errors"></h:message>
             <br/><br/>
-             <h:outputLabel>Введіть пароль: </h:outputLabel>
-            <h:inputSecret id="pass" maxlength="20"  value="#{logonBean.pass}"/>
+             <h:outputLabel><h3>Введіть пароль: </h3></h:outputLabel>
+            <p:password id="pass" maxlength="20"  value="#{logonBean.pass}"/>
             <h:message for="pass" errorClass="errors"></h:message>
-            <br/><br/>           
-            <h:commandButton value="Увійти" action="#{logonBean.logon}" />  
+            <br/><br/>
+            <p:growl id="growl" life="2000" />
+            <p:commandButton value="Увійти" id="withIcon" action="#{logonBean.logon}" update="growl" style="margin-right:20px;">
+            </p:commandButton>
             <h:messages infoStyle="color:blue" warnStyle="color:red" errorStyle="color:red"/>          
         </h:form>  </h:panelGroup>
           

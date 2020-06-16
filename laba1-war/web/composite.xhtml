@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:custom="http://java.sun.com/jsf/composite/custom"
+    >
+<h:head>
+     <h:outputStylesheet name="css/style.css" />   
+</h:head>
+<h:body styleClass="body1">
+    <center>
+    <h:panelGroup styleClass="div3">
+        <h:outputLabel><h3>Введіть нове ім'я-ідентифікатор адміністратора:</h3></h:outputLabel>
+        <custom:sender inputValue="#{customComponentBean.input}"
+                   outputValue="#{customComponentBean.output}"
+                  submitButtonText="Натиснути"
+                  submitButtonAction="#{customComponentBean.click}"/> 
+        <input type="button" value="Вийти" onClick='location.href="index.xhtml"'/>
+     </h:panelGroup>  </center>
+</h:body>
+</html>

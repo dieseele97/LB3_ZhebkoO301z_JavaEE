@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+    <composite:attribute name="inputValue"/>
+    <composite:attribute name="outputValue"/>
+    <composite:attribute name="submitButtonText"/>
+    <composite:attribute name="submitButtonAction"
+                    method-signature="java.lang.String action()"/>
+</composite:interface>
+<composite:implementation>
+    <h:form>
+        <p:panelGrid columns="3" id="textPanel">
+            <p:inputText id="name" value="#{cc.attrs.inputValue}"/>
+            <p:commandButton action="#{cc.attrs.submitButtonAction}"
+                             value="#{cc.attrs.submitButtonText}"
+                             update="@form"/>
+            <h:outputText value="#{cc.attrs.outputValue}"
+                          id="outputValue"/>
+        </p:panelGrid>
+    </h:form>
+</composite:implementation>
+
+</html>
